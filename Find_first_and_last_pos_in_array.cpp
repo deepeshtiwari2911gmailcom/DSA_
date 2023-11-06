@@ -1,9 +1,9 @@
 class Solution {
 public:
     // Function to find the lower bound of the target in the 'nums' array
-    int lowerbound(vector<int>& nums, int high, int target) {
+    int lowerbound(vector<int>& nums, int hight, int target) {
         int low = 0;
-        int high = high;
+        int high = hight;
         int first = -1; // Initialize the first occurrence to -1
         while (low <= high) {
             int mid = (low + high) / 2;
@@ -20,9 +20,9 @@ public:
     }
 
     // Function to find the upper bound of the target in the 'nums' array
-    int upperbound(vector<int>& nums, int high, int target) {
+    int upperbound(vector<int>& nums, int hight, int target) {
         int low = 0;
-        int high = high;
+        int high = hight;
         int first = -1; // Initialize the first occurrence to -1
         while (low <= high) {
             int mid = (low + high) / 2;
