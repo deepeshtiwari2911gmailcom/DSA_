@@ -1,0 +1,31 @@
+class Solution {
+public:
+    int findMin(vector<int>& nums) {
+        // Initialize low, high, and ans variables
+        int low = 0; 
+        int high = nums.size() - 1; 
+        int ans = INT_MAX;
+        
+        // Perform binary search
+        while (low <= high) {
+            // Calculate mid point
+            int mid = (low + high) / 2;
+            
+            // Check if the left side of mid is sorted
+            if (nums[mid] >= nums[low]) {
+                // Update ans with the minimum value on the left side
+                ans = min(ans, nums[low]);
+                // Move the search range to the right side of mid
+                low = mid + 1;
+            } else {
+                // Update ans with the minimum value on the right side
+                ans = min(ans, nums[mid]);
+                // Move the search range to the left side of mid
+                high = mid - 1;
+            }
+        }
+        
+        // Return the minimum value found during the search
+        return ans;
+    }
+};
